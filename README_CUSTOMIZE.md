@@ -33,32 +33,17 @@ This version is already personalized with the business information supplied on A
 ## Appointment form behavior
 
 - Phones/tablets: opens the customer's SMS app with the request pre-filled to (352) 933-5038.
-- Desktop/laptop: submits the request directly to GatorOilServices@gmail.com using FormSubmit's AJAX endpoint and shows a confirmation without leaving the page.
-- IMPORTANT: FormSubmit requires a one-time email activation. After the first desktop test submission, open GatorOilServices@gmail.com and click the FormSubmit activation/confirmation link. Until that is confirmed, live submissions will not be delivered normally.
+- All devices: submits the request directly to GatorOilServices@gmail.com through Web3Forms and shows a confirmation without leaving the page.
 
 
-## FormSubmit one-time setup (v11)
+## Appointment form delivery (Web3Forms)
 
-This version is prepared for FormSubmit's **Invisible Email** identifier.
+The booking form now sends directly through Web3Forms to `GatorOilServices@gmail.com`.
 
-1. Upload `index.html`, `main.js`, and `business-config.js` to GitHub.
-2. Open the live site at `https://gatoroilservices.github.io/gatoroil/` and submit one test request.
-3. Open the FormSubmit activation email sent to `GatorOilServices@gmail.com` and confirm it.
-4. In the confirmation/activation email, copy the random-like **Invisible Email** string FormSubmit provides.
-5. Open `business-config.js` and replace:
+- Access key: stored in `business-config.js` as `web3FormsAccessKey`.
+- Endpoint: `https://api.web3forms.com/submit`.
+- The customer stays on the website while the request is sent.
+- The page only shows **Request sent!** after Web3Forms returns a successful response.
+- A hidden `botcheck` honeypot is included for basic spam protection.
 
-```js
-formSubmitId: "",
-```
-
-with:
-
-```js
-formSubmitId: "PASTE_THE_RANDOM_STRING_HERE",
-```
-
-6. Upload only `business-config.js` again.
-
-Do not paste the full `https://formsubmit.co/...` URL into `formSubmitId`; paste only the random string.
-
-When the website moves to a custom domain, also change `formUrl` to the final HTTPS URL.
+If you ever regenerate the Web3Forms access key, replace only the value of `web3FormsAccessKey` in `business-config.js`.
