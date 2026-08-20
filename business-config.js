@@ -17,7 +17,7 @@ window.BUSINESS_CONFIG = {
   hoursShort: "Mon–Fri evenings · Weekends",
   hoursFull: "Monday–Friday: 4 PM–11 PM<br>Saturday: 8 AM–8 PM<br>Sunday: 8 AM–5 PM",
   instagram: "https://www.instagram.com/gatoroilservices/",
-  facebook: "https://www.facebook.com/gatoroilservices/",
+  facebook: "https://www.facebook.com/p/Gator-Oil-Services-61588521855780/",
   tiktok: "https://www.tiktok.com/@gatoroilservices",
   accentColor: "#63d51f",
   accentDark: "#3d9e13"
